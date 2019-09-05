@@ -1,3 +1,4 @@
 node_modules/
 .vscode/
 dist/
+my-lib/index.js
