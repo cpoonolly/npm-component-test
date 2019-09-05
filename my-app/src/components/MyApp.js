@@ -5,26 +5,26 @@ import myLibModule from 'my-lib';
 import myAppStore from '../stores/myAppStore';
 
 console.log(myLibModule);
+const { MyItemList } = myLibModule;
 
 @observer
 class MyApp extends Component {
   handleClick() {
-    myAppStore.addItem(Math.floor(Math.random() * 10));
+    myAppStore.incrementCount();
   }
 
   render() {
     return (
-      <div>
-        <h1>Hello World</h1>
-        <button onClick={() => this.handleClick()}>Add Item</button><br/>
-        <span>Item Count: {myAppStore.itemCount}</span>
-        <ul>
-          {myAppStore.items.map((item, index) => 
-            <li key={index}>
-              <MyLibComponent val={item}></MyLibComponent>
-            </li>
-          )}
-        </ul>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div>
+          <h1>My App</h1>
+          <button onClick={() => this.handleClick()}>Count</button><br/>
+          <span>Item Count: {myAppStore.count}</span>
+        </div>
+        <div>
+          <h1>My Item List</h1>
+          <MyItemList/>
+        </div>
       </div>
     );
   }

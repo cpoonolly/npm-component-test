@@ -1,16 +1,11 @@
-import { observable, computed, action } from "mobx";
+import { observable, action } from "mobx";
 
 class MyAppStore {
-  @observable items = [];
-
-  @computed
-  get itemCount() {
-    return this.items.length;
-  }
+  @observable count = 0;
 
   @action
-  addItem(item) {
-    this.items.push(item);
+  incrementCount() {
+    this.count++;
   }
 }
 

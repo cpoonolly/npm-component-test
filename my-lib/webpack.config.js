@@ -3,8 +3,10 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname),
+    filename: 'index.js',
+    library: 'mylib',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -16,5 +18,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  externals: [
+    'react',
+    'react-dom',
+    'mobx',
+    'mobx-react',
+    'mobx-utils'
+  ]
 };

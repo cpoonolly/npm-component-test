@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -19,6 +20,15 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'react': path.resolve('./node_modules/react'),
+      'react-dom': path.resolve('./node_modules/react-dom'),
+      'mobx': path.resolve('./node_modules/mobx'),
+      'mobx-react': path.resolve('./node_modules/mobx-react'),
+      'mobx-utils': path.resolve('./node_modules/mobx-utils')
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({

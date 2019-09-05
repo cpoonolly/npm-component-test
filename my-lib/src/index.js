@@ -1,6 +1,5 @@
-import MyLibComponent from './components/MyLib';
+import MyItemList from './components/MyItemList';
 
 export default {
-  MyLibComponent,
-  msg: 'hello world'
+  MyItemList
 };
